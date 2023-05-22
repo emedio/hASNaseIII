@@ -1,0 +1,30 @@
+Stage 2 heating of TC5b 60 to 310K
+ &cntrl
+  imin=0, 
+  irest=0,
+  ntx=1,
+  nstlim=100000,
+  dt=0.002,
+  ntb=2,
+  ntp=1,
+  ntc=2,
+  ntf=2,
+  ntt=3,
+  tempi=60.0,
+  temp0=310.0,
+  ntpr=1000,
+  ntwx=1000,
+  ntr = 1,
+  restraintmask='@CA,C,N,O,H&!:WAT',
+  restraint_wt=20.0,  
+  cut=10,
+  gamma_ln=5.0
+  nmropt = 1,
+  iwrap = 1,
+/
+
+&wt type='TEMP0', istep1=0,istep2=90000,
+  value1=60.0, value2=310.0
+/
+&wt type='END' /
+DISANG = restr
