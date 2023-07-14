@@ -1,0 +1,33 @@
+6
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 6981, 6970    !TH2478:HG1:TH2478:N
+$END
+
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 6981, 6980    !TH2478:HG1:TH2478:OG1
+$END
+
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 6980, 9025     !TH2478:OG1-ZN619:CG
+box = 1.0, 3.5
+$END
+ 
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 9026, 9025    !ZN619:OD1-ZN619:CG
+$END
+ 
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 9027, 6981     !ZN619:ND2-TH2478:HG1
+$END
+ 
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 9027, 9025      !ZN619:ND2-ZN619:CG
+box = 1.0, 3.5
+$END
+

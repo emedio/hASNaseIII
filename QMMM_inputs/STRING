@@ -1,0 +1,7 @@
+$STRINGSETUP
+dir = "results/"
+remove_z_bias = .false.
+fix_ends = .false.
+only_PMF = .true.
+buffer_size = 500
+$END

@@ -1,0 +1,37 @@
+QM/MM input string
+&cntrl
+  imin      	= 0,		! Minimization off
+  ntf       	= 1,      	! Bond interactions involving H-atoms omitted, use with NTC=1
+  temp0     	= 310.0,	! Reference temperature at which the system is to be kept
+  tempi     	= 310.0,	! Initial temperature
+  ntt       	= 3,  		! Use Langevin dynamics with the collision frequency ? given by gamma_ln
+  ntx       	= 1,        	! Reading the coordinates from the  rst file
+  ntb       	= 1,        	! Volume constant
+  cut       	= 10.0,   	! Non bonded cut
+  gamma_ln	= 5.0,      	! Collision frequency
+  nstlim    	= 2000000,    	! number of steps
+  dt        	= 0.001,    	! Every step of 1 fs
+  ntpr      	= 10,      	! Print the progress to the output file every ntpr steps
+  ntwx      	= 50,      	! Every ntwx steps, the coordinates will be written to the mdcrd file.
+  ntwr      	= 50,      	! Every ntwr steps during dynamics, the restrt file will be written
+  ntxo     	= 1,        	! Format of the final coordinates,
+  ifqnt     	= 1,        	! Switch on QM/MM coupled potential
+  nmropt    	= 1       	! For restraints
+  ig       	= XXXXX
+/
+  &qmmm
+  qmmask 	= '@9013-9029,6969-6987', 
+  qmcharge	= 0,
+  qmshake       = 0,        ! No SHAKE is applied to the atom 
+  qm_theory	= 'EXTERN',  ! Level of theory
+  qm_ewald      = 0,
+  writepdb  	= 1,        ! QM region will be written on the very first step to the file qmmm_region.pdb
+  qmcut		= 15.0
+/
+ &gau
+ method = 'B3LYP IOp(3/124=30)',
+ basis = '6-31+G(d)',
+ num_threads = 48,
+ executable = 'g16',
+ mem = '16GB', 
+/
